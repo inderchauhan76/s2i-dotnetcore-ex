@@ -1,4 +1,12 @@
 #!/bin/bash
+
+echo "Environment Variables"
+env
+
+echo "---> Installing npm proxy source first..."
+npm config set proxy $HTTP_PROXY
+npm config set https-proxy $HTTPS_PROXY
+
 echo "---> Installing npm proxy source ..."
 
 if [ ! -z $HTTP_PROXY ]; then
